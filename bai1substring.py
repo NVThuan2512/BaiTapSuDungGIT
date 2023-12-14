@@ -23,7 +23,25 @@ if len(C) % 2 == 0:
     median = (C[len(C) // 2] + C[len(C) // 2 - 1]) / 2
 else:
     median = C[len(C) // 2]
-
+c
 # In kết quả
 print("Mảng sau khi đã hợp nhất và sắp xếp: ", C)
 print("Giá trị trung vị của mảng: ", median)
+
+#bài1
+
+def lengthOfLongestSubstring(s):
+    k = 0
+    maxLength = 0
+    for i in range(len(s)):
+        for j in range(k, i):
+            if s[i] == s[j]:
+                k = j + 1
+                break
+        if i - k + 1 > maxLength:
+            maxLength = i - k + 1
+    return maxLength
+
+n = input("nhap mot chuoi: ")
+check = lengthOfLongestSubstring(n)
+print(check)
